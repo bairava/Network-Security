@@ -26,12 +26,16 @@ public class Eratosthenes {
             prime[i] = i;
         } 
         //Replacing the composite numbers with 1 in the array
+	double mulValue = 1;
         for(i=2;i<=(n/2);i++)
         {
             for(int j=2;j<=(n/2);j++)
             {
-                if((j*i)<=n)
-                prime[j*i] = 1;
+		mulValue = j*i;
+                if(mulValue <=n)
+                	prime[j*i] = 1;
+		else
+			break;	
             }
         }
         System.out.println("The prime number(s) upto "+n+" are");
